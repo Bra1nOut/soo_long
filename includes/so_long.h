@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:39:59 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:59:40 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:43:01 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ typedef struct	s_game{
 
 void	my_mlx_pixel_put(t_image *data, int x, int y);
 void	window_init(t_game *game);
-void	free_map(t_game *game);
-int		win_close(t_game *game);
 
 void	return_error(t_game *game, char *error);
 
@@ -96,5 +94,10 @@ void	move_left(t_game *game);
 void	move_up(t_game *game);
 void	move_down(t_game *game);
 
+//Close
+void	free_map(t_game *game);
+void	free_image(t_game *game);
+int		win_close(t_game *game);
+void		finish(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:09:52 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:49:28 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:43:04 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	win_close(t_game *game)
 	}
 	free(game->img);
 	free_map(game);
-	free(game);
 	exit(0);
 }
 

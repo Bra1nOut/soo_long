@@ -11,6 +11,7 @@ RED = \033[0;31m
 BLUE = \033[38;5;153m
 NC = \033[0m
 SRCS =	srcs/main.c\
+		srcs/finish.c\
 		srcs/window/window.c\
 		srcs/maping/parsing.c\
 		srcs/maping/map_checker.c\
@@ -62,7 +63,13 @@ bonus: $(OBJS_BONUS)
 
 mlx:
 	@git clone https://github.com/42Paris/minilibx-linux
+	@echo "$(RED)\e[1m┌─────mlx────────────────────────────────────────┐\e"
+	@echo "││$(BLUE)		Compiling mlx ⏳		 $(RED)│"
+	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 	@cd minilibx-linux && make -s
+	@echo "$(RED)\e[1m┌─────mlx────────────────────────────────────────┐\e"
+	@echo "││$(GREEN)		\e[1mCompilation termine ✅\e		 $(RED) │"
+	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 
 .PHONY: all clean fclean re bonus mlx
 
