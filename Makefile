@@ -3,9 +3,13 @@ NAME = so_long
 CC = cc
 FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 RM = rm -rf
-LIBFT = libft/libft/libft.a
+LIBFT = libft/libft.a
 MLX_FLAGS = -L./minilibx-linux -lmlx -lbsd -lXext -lX11 -lm
-LIBFT_FLAGS = -L./libft/libft -lft
+LIBFT_FLAGS = -L./libft -lft
+GREEN = \033[0;32m
+RED = \033[0;31m
+BLUE = \033[38;5;153m
+NC = \033[0m
 SRCS =	srcs/main.c\
 		srcs/window/window.c\
 		srcs/maping/parsing.c\
@@ -25,28 +29,41 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 TARGET = $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
+	@echo "$(RED)\e[1m┌─────$(NAME)────────────────────────────────────┐\e"
+	@echo "││$(BLUE)		Compiling $(NAME) ⏳		 $(RED)│"
+	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS)
+	@echo "$(RED)\e[1m┌─────$(NAME)────────────────────────────────────┐\e"
+	@echo "││$(GREEN)		\e[1mCompilation termine ✅\e		 $(RED) │"
+	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 
 $(LIBFT):
-	make -C libft/libft
+	@make -s -C libft
 
 .c.o:
-	cc $(FLAGS) -c -o $@ $<
+	@if [ "$(TARGET)" = "$(NAME)" ] && [ ! -f .mandatory ]; then \
+		touch .mandatory; \
+	fi
+	@cc $(FLAGS) -c -o $@ $<
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
-	make -C libft/libft re
+	@make -s -C libft re
 
 bonus: $(OBJS_BONUS)
 	ar rcs $(NAME) $(OBJS_BONUS)
 
-.PHONY: all clean fclean re
+mlx:
+	@git clone https://github.com/42Paris/minilibx-linux
+	@cd minilibx-linux && make -s
+
+.PHONY: all clean fclean re bonus mlx
 
 
