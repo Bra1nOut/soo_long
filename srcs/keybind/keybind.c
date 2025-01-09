@@ -6,25 +6,16 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:25:12 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:52:30 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:01:16 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-int	print_bozo()
-{
-	printf("%s\n", "Sacha gros bozo");
-	return (1);
-}
-
 int	keybind(int keycode, t_game *game)
 {
-	// printf("%i\n", keycode);
 	if (keycode == 65307)
 		win_close(game);
-	if (keycode == 98)
-		print_bozo();
 	if (keycode == 100)
 		move_right(game);
 	if (keycode == 97)
@@ -38,12 +29,6 @@ int	keybind(int keycode, t_game *game)
 
 void	mlx_action(t_game *game)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
-	// mlx_put_image_to_window(game->mlx, game->win, game->img->img, x, y);
 	mlx_hook(game->win, KeyPress, KeyPressMask, keybind, game);
 	mlx_hook(game->win, DestroyNotify, NoEventMask, win_close, game);
 	mlx_loop(game->mlx);

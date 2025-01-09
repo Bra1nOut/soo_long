@@ -72,5 +72,3 @@ mlx:
 	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 
 .PHONY: all clean fclean re bonus mlx
-
-

@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:51:47 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:47:14 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:08:21 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ void	read_map(t_game *game, char *argv)
 
 void	fill_map_malloc(t_game *game, char *argv)
 {
-	int fd;
-	int	i;
+	int		fd;
+	int		i;
 	char	*temp;
+
 	game->map->tab = malloc(sizeof(char *) * (game->map->line_count));
 	game->map->copy = malloc(sizeof(char *) * (game->map->line_count));
 	if (!game->map->tab || !game->map->copy)

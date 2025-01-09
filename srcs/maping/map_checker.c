@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:54:44 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:46:38 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:06:14 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	check_up_n_down(t_game *game)
 		if (game->map->tab[game->map->line_count - 1][i] != '1')
 			return_error(game, "Wall not fully closed in bottom row");
 		i++;
-
 	}
 }
 
@@ -44,7 +43,6 @@ void	check_left_n_right(t_game *game)
 			return_error(game, "Wall not fully closed on the left side");
 		j++;
 	}
-
 	j = 0;
 	while (j < game->map->line_count && game->map->tab[j][game->map->len - 1])
 	{
@@ -55,13 +53,7 @@ void	check_left_n_right(t_game *game)
 	}
 }
 
-void	valid_character(t_game *game, char c)
-{
-	if (c != '1' && c != '0' && c != 'P' && c != 'E' && c != 'C')
-		return_error(game, "Invalid character found");
-}
-
-void	check_E(t_game *game)
+void	check_e(t_game *game)
 {
 	int	i;
 	int	j;
@@ -87,11 +79,10 @@ void	check_E(t_game *game)
 	}
 }
 
-void	check_P(t_game *game)
+void	check_p(t_game *game)
 {
 	int	i;
 	int	j;
-
 
 	j = -1;
 	game->map->p_count = 0;
@@ -115,7 +106,7 @@ void	check_P(t_game *game)
 	}
 }
 
-void	check_C(t_game *game)
+void	check_c(t_game *game)
 {
 	int	i;
 	int	j;

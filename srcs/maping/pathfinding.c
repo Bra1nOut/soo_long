@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 10:56:30 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:47:14 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:08:37 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	flood_map(t_game *game, int y, int x)
 {
 	if (x > 0 && y > 0 && x < game->map->len && y < game->map->line_count
-			&& game->map->copy[y][x] != '1' && game->map->copy[y][x] != 'F')
+		&& game->map->copy[y][x] != '1' && game->map->copy[y][x] != 'F')
 	{
 		game->map->copy[y][x] = 'F';
 		flood_map(game, y + 1, x);
@@ -25,7 +25,7 @@ void	flood_map(t_game *game, int y, int x)
 	}
 }
 
-void	re_check_E(t_game *game)
+void	re_check_e(t_game *game)
 {
 	int	i;
 	int	j;
@@ -45,7 +45,7 @@ void	re_check_E(t_game *game)
 	}
 }
 
-void	re_check_C(t_game *game)
+void	re_check_c(t_game *game)
 {
 	int	i;
 	int	j;
@@ -68,7 +68,7 @@ void	re_check_C(t_game *game)
 void	pathfinding(t_game *game)
 {
 	flood_map(game, game->map->pos_y, game->map->pos_x);
-	re_check_E(game);
-	re_check_C(game);
+	re_check_e(game);
+	re_check_c(game);
 	ft_printf("La map est valide\n");
 }

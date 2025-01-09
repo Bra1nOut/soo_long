@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:09:52 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 18:43:04 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:00:53 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	window_init(t_game *game)
 {
 	game->count_click = 0;
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, game->map->len * TILE_WIDTH, game->map->line_count * TILE_HEIGHT, "so_long");
+	game->win = mlx_new_window(game->mlx, game->map->len * TILE_WIDTH,
+			game->map->line_count * TILE_HEIGHT, "so_long");
 	game->img = malloc(sizeof(t_image));
 }
 
@@ -54,6 +55,7 @@ void	free_image(t_game *game)
 	mlx_destroy_image(game->mlx, game->img->img_wall);
 	mlx_destroy_image(game->mlx, game->img->img_collectible);
 	mlx_destroy_image(game->mlx, game->img->img_player);
+	mlx_destroy_image(game->mlx, game->img->img_exit);
 }
 
 int	win_close(t_game *game)
@@ -70,4 +72,3 @@ int	win_close(t_game *game)
 	free_map(game);
 	exit(0);
 }
-

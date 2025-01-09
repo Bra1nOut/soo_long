@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 13:25:46 by levincen          #+#    #+#             */
-/*   Updated: 2024/12/30 13:25:11 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:16:35 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_substr(char const *s, int start, int len)
 {
 	char	*sub;
-	int	i;
+	int		i;
 
 	if (!s)
 		return (NULL);

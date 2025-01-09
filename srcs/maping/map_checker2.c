@@ -6,12 +6,17 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:57:49 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 15:47:14 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:06:21 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
+void	valid_character(t_game *game, char c)
+{
+	if (c != '1' && c != '0' && c != 'P' && c != 'E' && c != 'C')
+		return_error(game, "Invalid character found");
+}
 
 void	return_error(t_game *game, char *error)
 {
@@ -39,9 +44,9 @@ void	check_len(t_game *game)
 
 void	check_other(t_game *game)
 {
-	check_E(game);
-	check_P(game);
-	check_C(game);
+	check_e(game);
+	check_p(game);
+	check_c(game);
 	if (game->map->p_count < 1 || game->map->e_count < 1)
 		return_error(game, "One 'E' or/and 'P' is required");
 	if (game->map->c_count < 1)

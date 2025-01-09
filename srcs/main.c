@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:41:56 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/08 18:42:31 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 10:59:15 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void	return_error_v2(char *error)
 
 int	main(int argc, char **argv)
 {
+	int		i;
 	t_game	*game = malloc(sizeof(t_game));
-
-	int	i;
 
 	if (argc == 2)
 	{
