@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 10:56:30 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 11:08:37 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:08:45 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../../includes/so_long.h"
 
 void	flood_map(t_game *game, int y, int x)
 {

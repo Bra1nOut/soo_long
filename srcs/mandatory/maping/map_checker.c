@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:54:44 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 11:06:14 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:08:45 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../../includes/so_long.h"
 
 void	check_up_n_down(t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:25:12 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 11:01:16 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:08:45 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../../includes/so_long.h"
 
 int	keybind(int keycode, t_game *game)
 {

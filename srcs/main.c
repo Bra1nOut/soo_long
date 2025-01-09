@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:41:56 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 10:59:15 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:11:14 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 		read_map(game, argv[1]);
 		game->map->collected = 0;
 		game->map->move_count = 0;
+		game->map->tg = 0;
 		fill_map_malloc(game, argv[1]);
 		check_map(game);
 		ft_printf("Number of collectible : %d\n", game->map->c_count);

@@ -20,6 +20,8 @@ SRCS =	srcs/main.c\
 		srcs/mandatory/maping/draw_map.c\
 		srcs/mandatory/keybind/keybind.c\
 		srcs/mandatory/keybind/movement.c\
+		srcs/evolution.c\
+
 
 SRCS_BONUS = $(SRCS) \
 

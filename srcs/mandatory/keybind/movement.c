@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:31:21 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 11:03:13 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:03:37 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../../includes/so_long.h"
 
 void	move_right(t_game *game)
 {
@@ -20,6 +20,8 @@ void	move_right(t_game *game)
 		{
 			game->map->tab[game->map->pos_y][game->map->pos_x + 1] = '0';
 			game->map->collected++;
+			first_third(game);
+			second_third(game);
 			ft_printf("Object(s) collected : %d\n", game->map->collected);
 		}
 		if (game->map->tab[game->map->pos_y][game->map->pos_x + 1] == 'E')
@@ -42,6 +44,8 @@ void	move_left(t_game *game)
 		{
 			game->map->tab[game->map->pos_y][game->map->pos_x - 1] = '0';
 			game->map->collected++;
+			first_third(game);
+			second_third(game);
 			ft_printf("Object(s) collected : %d\n", game->map->collected);
 		}
 		if (game->map->tab[game->map->pos_y][game->map->pos_x - 1] == 'E')
@@ -64,6 +68,8 @@ void	move_up(t_game *game)
 		{
 			game->map->tab[game->map->pos_y + 1][game->map->pos_x] = '0';
 			game->map->collected++;
+			first_third(game);
+			second_third(game);
 			ft_printf("Object(s) collected : %d\n", game->map->collected);
 		}
 		if (game->map->tab[game->map->pos_y + 1][game->map->pos_x] == 'E')
@@ -86,6 +92,8 @@ void	move_down(t_game *game)
 		{
 			game->map->tab[game->map->pos_y - 1][game->map->pos_x] = '0';
 			game->map->collected++;
+			first_third(game);
+			second_third(game);
 			ft_printf("Object(s) collected : %d\n", game->map->collected);
 		}
 		if (game->map->tab[game->map->pos_y - 1][game->map->pos_x] == 'E')

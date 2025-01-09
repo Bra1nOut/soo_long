@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:39:59 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 11:06:38 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 17:20:09 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include "../libft/libft/libft.h"
 # include <fcntl.h>
 # include <stdbool.h>
+
+# include <unistd.h>
 
 # define TILE_WIDTH 100
 # define TILE_HEIGHT 100
@@ -49,6 +51,7 @@ typedef struct s_map
 	int		pos_x;
 	int		pos_y;
 	int		collected;
+	int		tg;
 }	t_map;
 
 typedef struct s_game
@@ -102,5 +105,10 @@ void	free_map(t_game *game);
 void	free_image(t_game *game);
 int		win_close(t_game *game);
 void	finish(t_game *game);
+
+//A SUPPRIMER
+
+void	first_third(t_game	*game);
+void	second_third(t_game *game);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:09:52 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 11:00:53 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:08:45 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../../includes/so_long.h"
 
 void	my_mlx_pixel_put(t_image *data, int x, int y)
 {
