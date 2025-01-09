@@ -12,14 +12,14 @@ BLUE = \033[38;5;153m
 NC = \033[0m
 SRCS =	srcs/main.c\
 		srcs/finish.c\
-		srcs/window/window.c\
-		srcs/maping/parsing.c\
-		srcs/maping/map_checker.c\
-		srcs/maping/map_checker2.c\
-		srcs/maping/pathfinding.c\
-		srcs/maping/draw_map.c\
-		srcs/keybind/keybind.c\
-		srcs/keybind/movement.c\
+		srcs/mandatory/window/window.c\
+		srcs/mandatory/maping/parsing.c\
+		srcs/mandatory/maping/map_checker.c\
+		srcs/mandatory/maping/map_checker2.c\
+		srcs/mandatory/maping/pathfinding.c\
+		srcs/mandatory/maping/draw_map.c\
+		srcs/mandatory/keybind/keybind.c\
+		srcs/mandatory/keybind/movement.c\
 
 SRCS_BONUS = $(SRCS) \
 
