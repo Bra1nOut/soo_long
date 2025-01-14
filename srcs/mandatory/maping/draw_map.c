@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:20:17 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 17:11:17 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:32:40 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	load_img(t_game *game)
 			"./Assets/Grass_floor.xpm", &width, &height);
 	game->img->img_player = mlx_xpm_file_to_image(game->mlx,
 			"./Assets/Tiplouf.xpm", &width, &height);
+	game->img->img_ennemy = mlx_xpm_file_to_image(game->mlx,
+			"./Assets/Tortipousse.xpm", &width, &height);
 	game->img->img_collectible = mlx_xpm_file_to_image(game->mlx,
 			"./Assets/Rare_Candy.xpm", &width, &height);
 	game->img->img_exit = mlx_xpm_file_to_image(game->mlx,

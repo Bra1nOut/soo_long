@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:39:59 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 17:20:09 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:48:14 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdbool.h>
 
 # include <unistd.h>
+#include <time.h>
 
 # define TILE_WIDTH 100
 # define TILE_HEIGHT 100
@@ -30,6 +31,7 @@ typedef struct s_image
 	void	*img_floor;
 	void	*img_collectible;
 	void	*img_player;
+	void	*img_ennemy;
 	void	*img_exit;
 	void	*img;
 	char	*addr;
@@ -52,6 +54,8 @@ typedef struct s_map
 	int		pos_y;
 	int		collected;
 	int		tg;
+	int		ftg;
+	bool	evolving;
 }	t_map;
 
 typedef struct s_game
@@ -107,8 +111,10 @@ int		win_close(t_game *game);
 void	finish(t_game *game);
 
 //A SUPPRIMER
-
+void	test_first_third(t_game	*game);
 void	first_third(t_game	*game);
 void	second_third(t_game *game);
+void	movement(t_game *game);
+void	put_ennemy(t_game *game, int x, int y);
 
 #endif

@@ -21,6 +21,7 @@ SRCS =	srcs/main.c\
 		srcs/mandatory/keybind/keybind.c\
 		srcs/mandatory/keybind/movement.c\
 		srcs/evolution.c\
+		srcs/ennemy.c\
 
 
 SRCS_BONUS = $(SRCS) \

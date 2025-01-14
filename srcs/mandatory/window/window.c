@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:09:52 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 13:08:45 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:34:48 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	free_image(t_game *game)
 	mlx_destroy_image(game->mlx, game->img->img_collectible);
 	mlx_destroy_image(game->mlx, game->img->img_player);
 	mlx_destroy_image(game->mlx, game->img->img_exit);
+	mlx_destroy_image(game->mlx, game->img->img_ennemy);
 }
 
 int	win_close(t_game *game)
