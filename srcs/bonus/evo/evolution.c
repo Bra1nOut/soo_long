@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:06:26 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:14:24 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:26:49 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,19 @@ void	is_evolving_pingoleon(t_game *game)
 
 void	tricky_evolving_prinplup(t_game *game)
 {
-	mlx_destroy_image(game->mlx, game->img->img_player);
-	is_evolving_piplup(game);
-	is_evolving_prinplup(game);
-	is_evolving_piplup(game);
-	is_evolving_prinplup(game);
-	is_evolving_piplup(game);
-	is_evolving_prinplup(game);
-	printf("CHECK 4 %d\n", game->map->evolving);
-	if (game->map->evolving == true)
-		game->map->evolving = false;
+	int i = 0;
+
+	while (i == 0)
+	{
+		mlx_destroy_image(game->mlx, game->img->img_player);
+		is_evolving_piplup(game);
+		is_evolving_prinplup(game);
+		is_evolving_piplup(game);
+		is_evolving_prinplup(game);
+		is_evolving_piplup(game);
+		is_evolving_prinplup(game);
+		i = 1;
+	}
 }
 
 void	tricky_evolving_pingoleon(t_game *game)

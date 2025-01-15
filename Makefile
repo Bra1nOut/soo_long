@@ -11,8 +11,8 @@ GREEN = \033[0;32m
 RED = \033[0;31m
 BLUE = \033[38;5;153m
 NC = \033[0m
-SRCS =	srcs/main.c\
-		srcs/finish.c\
+SRCS =	srcs/mandatory/main.c\
+		srcs/mandatory/finish.c\
 		srcs/mandatory/window/window.c\
 		srcs/mandatory/maping/parsing.c\
 		srcs/mandatory/maping/map_checker.c\

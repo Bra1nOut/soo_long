@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:54:44 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:14:31 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:12:42 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,32 @@ void	check_c(t_game *game)
 		}
 		j++;
 		i = 0;
+	}
+}
+
+void	check_a(t_game *game)
+{
+	int	i;
+	int	j;
+
+	j = -1;
+	game->map->a_count = 0;
+	while (++j < game->map->line_count)
+	{
+		i = -1;
+		while (++i < game->map->len)
+		{
+			if (game->map->tab[j][i] == 'A')
+			{
+				if (game->map->a_count == 0)
+				{
+					game->map->ennemy_pos_y = j;
+					game->map->ennemy_pos_x = i;
+				}
+				game->map->a_count++;
+				if (game->map->a_count > 1)
+					return_error(game, "Multiple 'A' found");
+			}
+		}
 	}
 }

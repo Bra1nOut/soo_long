@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:20:17 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 11:37:07 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:30:17 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void	draw_map(t_game *game)
 				image = game->img->img_player;
 			else if (game->map->tab[y][x] == 'E')
 				image = game->img->img_exit;
-			else if (game->map->tab[y][x] == 'A')
-				image = game->img->img_ennemy;
 			game->img->addr = mlx_get_data_addr(image, &game->img->bits_per_pixel, &game->img->line_length, &game->img->endian);
 			mlx_put_image_to_window(game->mlx, game->win, image, x * TILE_WIDTH, y * TILE_WIDTH);
 		}

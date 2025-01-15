@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 17:36:42 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:14:21 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:21:24 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,40 +20,42 @@ void	put_ennemy(t_game *game, int x, int y)
 	mlx_put_image_to_window(game->mlx, game->win, game->img->img, x * TILE_WIDTH, y * TILE_WIDTH);
 }
 
-void	check_a(t_game *game)
+void	ennemy_move_up(t_game *game)
 {
-	int	i;
-	int	j;
+		put_floor(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y);
+		put_ennemy(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y - 1);
+		game->map->ennemy_pos_y--;
+}
 
-	j = -1;
-	game->map->p_count = 0;
-	while (++j < game->map->line_count)
-	{
-		i = -1;
-		while (++i < game->map->len)
-		{
-			if (game->map->tab[j][i] == 'A')
-			{
-				if (game->map->a_count == 0)
-				{
-					game->map->ennemy_pos_y = j;
-					game->map->ennemy_pos_x = i;
-				}
-				game->map->p_count++;
-				if (game->map->a_count > 1)
-					return_error(game, "Multiple 'A' found");
-			}
-		}
-	}
+void	ennemy_move_down(t_game *game)
+{
+		put_floor(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y);
+		put_ennemy(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y + 1);
+		game->map->ennemy_pos_y++;
+}
+
+void	ennemy_move_right(t_game *game)
+{
+	put_floor(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y);
+	put_ennemy(game, game->map->ennemy_pos_x + 1, game->map->ennemy_pos_y);
+	game->map->ennemy_pos_x++;
+}
+
+void	ennemy_move_left(t_game *game)
+{
+	put_floor(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y);
+	put_ennemy(game, game->map->ennemy_pos_x - 1, game->map->ennemy_pos_y);
+	game->map->ennemy_pos_x--;
 }
 
 void	movement(t_game *game)
 {
-	if (game->map->tab[game->map->ennemy_pos_y - 1][game->map->ennemy_pos_x] != '1')
-	{
-		put_floor(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y);
-		put_ennemy(game, game->map->ennemy_pos_x, game->map->ennemy_pos_y - 1);
-		game->map->ennemy_pos_y--;
-		sleep(1);
-	}
+	if (game->map->tab[game->map->ennemy_pos_y + 1][game->map->ennemy_pos_x] != '1')
+		ennemy_move_down(game);
+	else if (game->map->tab[game->map->ennemy_pos_y][game->map->ennemy_pos_x + 1] != '1')
+		ennemy_move_right(game);
+	else if (game->map->tab[game->map->ennemy_pos_y - 1][game->map->ennemy_pos_x] != '1')
+		ennemy_move_up(game);
+	else if (game->map->tab[game->map->ennemy_pos_y][game->map->ennemy_pos_x - 1] != '1')
+		ennemy_move_left(game);
 }

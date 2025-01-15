@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:27:28 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:11:49 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:10:45 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	check_left_n_right(t_game *game);
 void	check_e(t_game *game);
 void	check_p(t_game *game);
 void	check_c(t_game *game);
+void	check_a(t_game *game);
 void	check_other(t_game *game);
 void	check_map(t_game *game);
 void	re_check_e(t_game *game);

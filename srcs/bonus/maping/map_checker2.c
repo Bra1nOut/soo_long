@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:57:49 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:14:34 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 18:11:25 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,13 @@ void	check_other(t_game *game)
 	check_e(game);
 	check_p(game);
 	check_c(game);
+	check_a(game);
 	if (game->map->p_count < 1 || game->map->e_count < 1)
 		return_error(game, "One 'E' or/and 'P' is required");
 	if (game->map->c_count < 1)
 		return_error(game, "At least one 'C' is required");
+	if (game->map->a_count < 1)
+		return_error(game, "At least one 'A' is required");
 }
 
 void	check_map(t_game *game)
