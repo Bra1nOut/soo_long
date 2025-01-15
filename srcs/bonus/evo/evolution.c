@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:06:26 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/14 17:35:12 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:14:24 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../../includes/so_long_bonus.h"
 
 void	is_evolving_piplup(t_game *game)
 {
@@ -114,20 +114,5 @@ void	second_third(t_game *game)
 				"./Assets/Pingoleon.xpm", &width, &height);
 		game->map->ftg++;
 		game->map->evolving = false;
-	}
-}
-
-void	test_first_third(t_game	*game)
-{
-	int	total;
-	int	pourcentage;
-	int	seuil;
-
-	total = game->map->c_count - 1;
-	pourcentage = 35;
-	seuil = (total * pourcentage) / 100;
-	if (game->map->collected >= seuil && game->map->tg == 0)
-	{
-		game->map->evolving = true;
 	}
 }

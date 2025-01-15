@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:31:13 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/09 10:59:40 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:13:09 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
 void	finish(t_game *game)
 {

@@ -4,8 +4,9 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 RM = rm -rf
 LIBFT = libft/libft.a
-MLX_FLAGS = -L./minilibx-linux -lmlx -lbsd -lXext -lX11 -lm
 LIBFT_FLAGS = -L./libft -lft
+MLX_FLAGS = -L./minilibx-linux -lmlx -lbsd -lXext -lX11 -lm
+INCLUDES = -I./includes -I./libft
 GREEN = \033[0;32m
 RED = \033[0;31m
 BLUE = \033[38;5;153m
@@ -20,11 +21,21 @@ SRCS =	srcs/main.c\
 		srcs/mandatory/maping/draw_map.c\
 		srcs/mandatory/keybind/keybind.c\
 		srcs/mandatory/keybind/movement.c\
-		srcs/evolution.c\
-		srcs/ennemy.c\
+
+SRCS_BONUS = srcs/bonus/main.c\
+			srcs/bonus/finish.c\
+			srcs/bonus/window/window.c\
+			srcs/bonus/maping/parsing.c\
+			srcs/bonus/maping/map_checker.c\
+			srcs/bonus/maping/map_checker2.c\
+			srcs/bonus/maping/pathfinding.c\
+			srcs/bonus/maping/draw_map.c\
+			srcs/bonus/keybind/keybind.c\
+			srcs/bonus/keybind/movement.c\
+			srcs/bonus/ennemy/ennemy.c\
+			srcs/bonus/evo/evolution.c\
 
 
-SRCS_BONUS = $(SRCS) \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -36,9 +47,9 @@ $(NAME): $(LIBFT) $(OBJS)
 	@echo "$(RED)\e[1m┌─────$(NAME)────────────────────────────────────┐\e"
 	@echo "││$(BLUE)		Compiling $(NAME) ⏳		 $(RED)│"
 	@echo "\e[1m└────────────────────────────────────────────────┘\e"
-	@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS)
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS) $(INCLUDES)
 	@echo "$(RED)\e[1m┌─────$(NAME)────────────────────────────────────┐\e"
-	@echo "││$(GREEN)		\e[1mCompilation termine ✅\e		 $(RED) │"
+	@echo "││$(GREEN)		\e[1mCompilation finished ✅\e		 $(RED) │"
 	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 
 $(LIBFT):
@@ -61,8 +72,15 @@ fclean: clean
 re: fclean all
 	@make -s -C libft re
 
-bonus: $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJS_BONUS)
+bonus: clean $(OBJS_BONUS)
+	@echo "$(RED)\e[1m┌─────$(NAME)────────────────────────────────────┐\e"
+	@echo "││$(BLUE)	    Compiling $(NAME)'s Bonus ⏳         $(RED)│"
+	@echo "\e[1m└────────────────────────────────────────────────┘\e"
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJS_BONUS) $(MLX_FLAGS) $(LIBFT_FLAGS) $(INCLUDES)
+	@echo "$(RED)\e[1m┌─────$(NAME)────────────────────────────────────┐\e"
+	@echo "││$(GREEN)	      \e[1mCompilation finished ✅\e		 $(RED) │"
+	@echo "\e[1m└────────────────────────────────────────────────┘\e"
+
 
 mlx:
 	@git clone https://github.com/42Paris/minilibx-linux
@@ -71,7 +89,7 @@ mlx:
 	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 	@cd minilibx-linux && make -s
 	@echo "$(RED)\e[1m┌─────mlx────────────────────────────────────────┐\e"
-	@echo "││$(GREEN)		\e[1mCompilation termine ✅\e		 $(RED) │"
+	@echo "││$(GREEN)		\e[1mCompilation finished ✅\e		 $(RED) │"
 	@echo "\e[1m└────────────────────────────────────────────────┘\e"
 
 .PHONY: all clean fclean re bonus mlx

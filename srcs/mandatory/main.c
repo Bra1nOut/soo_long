@@ -6,11 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:41:56 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/14 17:48:30 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:12:39 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../../includes/so_long.h"
 
 void	return_error_v2(char *error)
 {
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 		window_init(game);
 		load_img(game);
 		draw_map(game);
-		put_ennemy(game, 5, 5);
+		// put_ennemy(game, 5, 5);
 		finish(game);
 		mlx_action(game);
 		return (0);

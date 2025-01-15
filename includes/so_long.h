@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:39:59 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/14 17:48:14 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:33:21 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ typedef struct s_map
 	int		pos_x;
 	int		pos_y;
 	int		collected;
+	int		ennemy_pos_x;
+	int		ennemy_pos_y;
+	int		a_count;
 	int		tg;
 	int		ftg;
 	bool	evolving;
@@ -109,12 +112,5 @@ void	free_map(t_game *game);
 void	free_image(t_game *game);
 int		win_close(t_game *game);
 void	finish(t_game *game);
-
-//A SUPPRIMER
-void	test_first_third(t_game	*game);
-void	first_third(t_game	*game);
-void	second_third(t_game *game);
-void	movement(t_game *game);
-void	put_ennemy(t_game *game, int x, int y);
 
 #endif
