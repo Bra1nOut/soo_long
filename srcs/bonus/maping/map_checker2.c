@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 11:57:49 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 18:11:25 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:52:07 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@ void	valid_character(t_game *game, char c)
 {
 	if (c != '1' && c != '0' && c != 'P' && c != 'E' && c != 'C' && c != 'A')
 		return_error(game, "Invalid character found");
-}
-
-void	return_error(t_game *game, char *error)
-{
-	ft_printf("Error: %s\n", error);
-	free_map(game);
-	free(game);
-	exit(EXIT_FAILURE);
 }
 
 void	check_len(t_game *game)

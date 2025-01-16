@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:06:26 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 18:26:49 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:44:11 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,14 @@ void	is_evolving_pingoleon(t_game *game)
 
 void	tricky_evolving_prinplup(t_game *game)
 {
-	int i = 0;
-
-	while (i == 0)
-	{
-		mlx_destroy_image(game->mlx, game->img->img_player);
-		is_evolving_piplup(game);
-		is_evolving_prinplup(game);
-		is_evolving_piplup(game);
-		is_evolving_prinplup(game);
-		is_evolving_piplup(game);
-		is_evolving_prinplup(game);
-		i = 1;
-	}
+	mlx_destroy_image(game->mlx, game->img->img_player);
+	is_evolving_piplup(game);
+	is_evolving_prinplup(game);
+	is_evolving_piplup(game);
+	is_evolving_prinplup(game);
+	is_evolving_piplup(game);
+	is_evolving_prinplup(game);
+	game->map->player_power = 2;
 }
 
 void	tricky_evolving_pingoleon(t_game *game)
@@ -75,47 +70,5 @@ void	tricky_evolving_pingoleon(t_game *game)
 	is_evolving_pingoleon(game);
 	is_evolving_prinplup(game);
 	is_evolving_pingoleon(game);
-}
-
-void	first_third(t_game	*game)
-{
-	int	total;
-	int	pourcentage;
-	int	seuil;
-	int	width;
-	int	height;
-
-	total = game->map->c_count;
-	pourcentage = 35;
-	seuil = (total * pourcentage) / 100;
-	if (game->map->collected >= seuil && game->map->tg == 0)
-	{
-		printf("right before evolving :%d\n", game->map->evolving);
-		tricky_evolving_prinplup(game);
-		game->img->img_player = mlx_xpm_file_to_image(game->mlx,
-				"./Assets/Prinplouf.xpm", &width, &height);
-		game->map->tg++;
-	}
-}
-
-void	second_third(t_game *game)
-{
-	int	total;
-	int	pourcentage;
-	int	seuil;
-	int	width;
-	int	height;
-
-	total = game->map->c_count;
-	pourcentage = 75;
-	seuil = (total * pourcentage) / 100;
-	if (game->map->collected >= seuil && game->map->ftg == 0)
-	{
-		game->map->evolving = true;
-		tricky_evolving_pingoleon(game);
-		game->img->img_player = mlx_xpm_file_to_image(game->mlx,
-				"./Assets/Pingoleon.xpm", &width, &height);
-		game->map->ftg++;
-		game->map->evolving = false;
-	}
+	game->map->player_power = 3;
 }

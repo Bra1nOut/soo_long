@@ -24,7 +24,9 @@ SRCS =	srcs/mandatory/main.c\
 
 SRCS_BONUS = srcs/bonus/main.c\
 			srcs/bonus/finish.c\
+			srcs/bonus/ending.c\
 			srcs/bonus/window/window.c\
+			srcs/bonus/window/frame.c\
 			srcs/bonus/maping/parsing.c\
 			srcs/bonus/maping/map_checker.c\
 			srcs/bonus/maping/map_checker2.c\
@@ -32,10 +34,10 @@ SRCS_BONUS = srcs/bonus/main.c\
 			srcs/bonus/maping/draw_map.c\
 			srcs/bonus/keybind/keybind.c\
 			srcs/bonus/keybind/movement.c\
-			srcs/bonus/ennemy/ennemy.c\
+			srcs/bonus/ennemy/ennemy_movements.c\
+			srcs/bonus/ennemy/ennemy_action.c\
 			srcs/bonus/evo/evolution.c\
-
-
+			srcs/bonus/evo/third_count.c\
 
 OBJS = $(SRCS:.c=.o)
 

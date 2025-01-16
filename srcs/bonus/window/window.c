@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 10:09:52 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:13:22 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:42:42 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	my_mlx_pixel_put(t_image *data, int x, int y)
 
 void	window_init(t_game *game)
 {
-	game->count_click = 0;
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, game->map->len * TILE_WIDTH,
 			game->map->line_count * TILE_HEIGHT, "so_long");

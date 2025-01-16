@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:25:12 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:14:25 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:40:43 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int	keybind(int keycode, t_game *game)
 {
-	printf("CHECK 1 %d\n", game->map->evolving);
-
 	if (game->map->evolving == false)
 	{
-		printf("CHECK 2 %d\n", game->map->evolving);
 		if (keycode == 65307)
 			win_close(game);
 		if (keycode == 100)
@@ -35,9 +32,7 @@ int	keybind(int keycode, t_game *game)
 
 void	mlx_action(t_game *game)
 {
-	printf("CHECK 6 : %d\n", game->map->evolving);
 	if (game->map->evolving == false)
 		mlx_hook(game->win, KeyPress, KeyPressMask, keybind, game);
 	mlx_hook(game->win, DestroyNotify, NoEventMask, win_close, game);
-	mlx_loop(game->mlx);
 }

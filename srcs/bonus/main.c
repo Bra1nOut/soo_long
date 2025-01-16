@@ -6,17 +6,11 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:41:56 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 17:33:44 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:52:45 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long_bonus.h"
-
-void	return_error_v2(char *error)
-{
-	ft_printf("Error: %s\n", error);
-	exit(EXIT_FAILURE);
-}
 
 int	main(int argc, char **argv)
 {
@@ -34,6 +28,9 @@ int	main(int argc, char **argv)
 		game->map->tg = 0;
 		game->map->ftg = 0;
 		game->map->evolving = false;
+		game->map->player_power = 1;
+		game->map->ennemy_power = 1;
+		game->frame = 0;
 		fill_map_malloc(game, argv[1]);
 		check_map(game);
 		ft_printf("Number of collectible : %d\n", game->map->c_count);
@@ -42,6 +39,9 @@ int	main(int argc, char **argv)
 		draw_map(game);
 		finish(game);
 		mlx_action(game);
+		if (game->map->ennemy_power == 1)
+			mlx_loop_hook(game->mlx, ft_loop, game);
+		mlx_loop(game->mlx);
 		return (0);
 	}
 	free(game);

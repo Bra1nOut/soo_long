@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:27:28 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/15 18:10:45 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:55:57 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ typedef struct s_map
 	int		a_count;
 	int		tg;
 	int		ftg;
+	int		player_power;
+	int		ennemy_power;
 	bool	evolving;
 }	t_map;
 
@@ -64,15 +66,19 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
-	int		count_click;
+	int		frame;
 	t_image	*img;
 	t_map	*map;
 }				t_game;
 
 void	my_mlx_pixel_put(t_image *data, int x, int y);
 void	window_init(t_game *game);
+int		ft_frame(t_game *game);
+int		ft_loop(t_game *game);
 
 void	return_error(t_game *game, char *error);
+void	return_error_v2(char *error);
+void	die(t_game *game);
 
 //Parsing and map checker
 void	fill_map_malloc(t_game *game, char *argv);
@@ -102,12 +108,19 @@ int		keybind(int keycode, t_game *game);
 void	mlx_action(t_game *game);
 
 //Ennemy
-void	movement(t_game *game);
+int		ennemy_movement(t_game *game);
+void	battle(t_game *game, int x, int y);
 void	put_ennemy(t_game *game, int x, int y);
+void	put_corpse(t_game *game, int x, int y);
 
 //Evolution
 void	first_third(t_game *game);
 void	second_third(t_game *game);
+void	is_evolving_piplup(t_game *game);
+void	is_evolving_prinplup(t_game *game);
+void	is_evolving_pingoleon(t_game *game);
+void	tricky_evolving_prinplup(t_game *game);
+void	tricky_evolving_pingoleon(t_game *game);
 
 //Movements
 void	move_right(t_game *game);
