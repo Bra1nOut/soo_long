@@ -6,7 +6,7 @@
 /*   By: levincen <levincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 18:38:12 by levincen          #+#    #+#             */
-/*   Updated: 2025/01/16 18:56:20 by levincen         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:07:17 by levincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	put_corpse(t_game *game, int x, int y)
 	{
 		mlx_destroy_image(game->mlx, game->img->img_ennemy);
 		game->img->img_ennemy = mlx_xpm_file_to_image(game->mlx,
-			"./Assets/Tortipousse_Boom1.xpm", &width, &height);
+			"./Assets/Tortipousse_Boom2.xpm", &width, &height);
 	}
 	put_ennemy(game, x, y);
 }
